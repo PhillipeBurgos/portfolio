@@ -168,7 +168,7 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 .hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:28px 64px;align-items:end;border-top:1px solid var(--ink);padding-top:28px}
 .statement{font-family:var(--display);font-weight:500;font-size:clamp(1.45rem,2.7vw,2.5rem);line-height:1.12;letter-spacing:-.025em;max-width:21ch}
 .hero-aside p{color:var(--ink-2);max-width:44ch;margin-bottom:24px}
-.hl{background:var(--red);color:#fff;padding:.05em .2em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl{background:none;color:var(--red);font-weight:700}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 
 .places{border-bottom:1px solid var(--line)}
