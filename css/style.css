@@ -187,7 +187,7 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 .p-go{grid-area:go}
 .p-title{display:block;font-family:var(--display);font-weight:600;font-size:clamp(1.75rem,3.8vw,3.4rem);letter-spacing:-.035em;line-height:1.02}
 .p-desc{display:block;color:var(--ink-2);font-size:16px;max-width:54ch;margin-top:10px}
-.p-client{display:block;font-size:15px;color:var(--ink);margin-bottom:10px;font-weight:500}
+.p-client{grid-area:year;display:block;font-size:15px;color:var(--ink);font-weight:500}
 .p-tags{display:flex;flex-wrap:wrap;gap:6px}
 .p-go{width:48px;height:48px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:background .4s var(--ease),border-color .4s,color .4s,transform .6s var(--ease)}
 .p-go .ico{width:18px;height:18px}
@@ -255,8 +255,6 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 
 @media (max-width:1080px){
   .project>a{grid-template-areas:"year main go" ". meta .";grid-template-columns:110px 1fr 48px}
-  .p-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
-  .p-client{margin:0}
   .job-inner{padding-left:0;padding-right:0}
 }
 @media (max-width:860px){
@@ -277,7 +275,6 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
   .actions .btn{flex:1 1 100%}
   .project>a{grid-template-areas:"year year" "main go" "meta meta";grid-template-columns:1fr 44px;padding:28px 0}
   .p-go{width:44px;height:44px;align-self:start;margin-top:2px}
-  .p-client{display:none}
   .job-head{grid-template-columns:1fr 44px;padding:22px 0}
   .job-when{grid-column:1/-1;padding-top:0;order:-1}
   .rows li{grid-template-columns:1fr}
