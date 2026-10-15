@@ -190,7 +190,7 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 .p-go{grid-area:go}
 .p-title{display:block;font-family:var(--display);font-weight:600;font-size:clamp(1.75rem,3.8vw,3.4rem);letter-spacing:-.035em;line-height:1.02}
 .p-desc{display:block;color:var(--ink-2);font-size:16px;max-width:54ch;margin-top:10px}
-.p-client{grid-area:year;display:block;font-size:15px;color:var(--ink);font-weight:500}
+.p-client{grid-area:year;align-self:start;padding-top:.4em;display:block;font-size:15px;color:var(--red);font-weight:500}
 .p-tags{display:flex;flex-wrap:wrap;gap:6px}
 .p-go{width:48px;height:48px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:background .4s var(--ease),border-color .4s,color .4s,transform .6s var(--ease)}
 .p-go .ico{width:18px;height:18px}
@@ -201,7 +201,7 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 @media (hover:hover){
   .project>a:hover .p-bg,.project>a:focus-visible .p-bg{clip-path:inset(0 0 0 0 round var(--radius))}
   .project>a:hover .p-bg img,.project>a:focus-visible .p-bg img{transform:scale(1)}
-  .project>a:hover .p-title,.project>a:focus-visible .p-title,.project>a:hover .p-client,.project>a:focus-visible .p-client{color:var(--on-dark)}
+  .project>a:hover .p-title,.project>a:focus-visible .p-title{color:var(--on-dark)}
   .project>a:hover .p-desc,.project>a:focus-visible .p-desc,.project>a:hover .p-year,.project>a:focus-visible .p-year{color:var(--on-dark-2)}
   .project>a:hover .tag,.project>a:focus-visible .tag{color:var(--on-dark-2);border-color:rgba(242,239,233,.3)}
   .project>a:hover .p-title,.project>a:hover .p-desc{transform:translateX(14px)}
