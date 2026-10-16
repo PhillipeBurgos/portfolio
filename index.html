@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 <script>try{if(sessionStorage.getItem("pt")){document.documentElement.classList.add("pt-in");sessionStorage.removeItem("pt")}}catch(e){}</script>
-<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/style.css?v=13">
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -25,14 +25,14 @@
 <div class="curtain" aria-hidden="true"></div>
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="brand glass" href="#home" aria-label="Phillipe Burgos, ir para o início">Burgos</a>
+    <a class="brand" href="#home" aria-label="Phillipe Burgos, ir para o início">burgos</a>
     <nav class="menu glass" aria-label="Principal">
       <a href="#home" data-section="home" class="is-active"><span class="roll"><span data-text="Home">Home</span></span><span class="dot"></span></a>
       <a href="#portfolio" data-section="portfolio"><span class="roll"><span data-text="Portfólio">Portfólio</span></span><span class="dot"></span></a>
       <a href="https://www.linkedin.com/in/phillipeburgos" target="_blank" rel="noopener"><span class="roll"><span data-text="LinkedIn">LinkedIn</span></span><svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
       <a href="curriculo-phillipe-burgos.pdf" class="cv js-cv" download><svg class="dl-ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><g class="arrow"><path d="M8 2v8M4.5 6.8 8 10.3l3.5-3.5"/></g><path class="tray" d="M2.5 13.5h11"/></svg><span class="roll"><span data-text="Baixar currículo">Baixar currículo</span></span></a>
     </nav>
-    <button class="menu-toggle glass" type="button" aria-expanded="false" aria-controls="sheet"><span class="bars" aria-hidden="true"></span><span class="label">Menu</span></button>
+    <button class="menu-toggle glass" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Abrir menu"><span class="bars" aria-hidden="true"></span></button>
   </div>
 </header>
 <div class="sheet" id="sheet" aria-hidden="true">
@@ -42,7 +42,7 @@
     <a href="curriculo-phillipe-burgos.pdf" class="js-cv" download style="--i:2">Baixar currículo<svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 2v9M4.5 7.5 8 11l3.5-3.5M2.5 14h11"/></svg></a>
     <a href="https://www.linkedin.com/in/phillipeburgos" target="_blank" rel="noopener" style="--i:3">LinkedIn<svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
   </nav>
-  <small>Recife, PE. <span class="clock"></span></small>
+  <a class="sheet-mail" href="mailto:phillipeb2@gmail.com">phillipeb2@gmail.com</a>
 </div><main id="conteudo">
   <section class="hero wrap" id="home">
 
@@ -75,8 +75,8 @@
       <ul class="projects" id="projects">
         <li class="project">
           <a href="projetos/design-system-pluriconnect.html">
-            <span class="p-thumb" aria-hidden="true"><img src="assets/img/projetos/design-system-pluriconnect/capa.svg" alt="" loading="lazy" decoding="async"></span>
-            <span class="p-bg" aria-hidden="true"><img src="assets/img/projetos/design-system-pluriconnect/capa.svg" alt="" loading="lazy" decoding="async"></span>
+            <span class="p-thumb" aria-hidden="true"><img src="assets/img/projetos/design-system-pluriconnect/capa.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="p-bg" aria-hidden="true"><img src="assets/img/projetos/design-system-pluriconnect/capa.jpg" alt="" loading="lazy" decoding="async"></span>
             <span class="p-client">Libro Educação</span>
             <span class="p-main"><span class="p-title">Design System PluriConnect</span><span class="p-desc">Redesign e governança do sistema que dá consistência visual e técnica a toda a plataforma.</span></span>
             <span class="p-meta"><span class="p-tags"><span class="tag">Design System</span><span class="tag">Tokens</span><span class="tag">Handoff</span></span></span>
@@ -279,7 +279,7 @@
     </div>
   </div>
 </footer>
-<div class="toast" role="status" aria-live="polite"><i><svg viewBox="0 0 10 10" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M2 5.2 4.2 7.3 8 3"/></svg></i><span>E-mail copiado</span></div><script src="js/main.js" defer></script>
+<div class="toast" role="status" aria-live="polite"><i><svg viewBox="0 0 10 10" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M2 5.2 4.2 7.3 8 3"/></svg></i><span>E-mail copiado</span></div><script src="js/main.js?v=3" defer></script>
 <script src="js/home.js" defer></script>
 </body>
 </html>

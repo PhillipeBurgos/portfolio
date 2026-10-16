@@ -61,6 +61,7 @@ let lastY = scrollY, ticking = false;
 function onScroll(){
   const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
   bar.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
+  nav.classList.toggle("is-scrolled", y > 8);
   if (!sheet.classList.contains("is-open")) {
     const down = y > lastY + 4, up = y < lastY - 4;
     if (down && y > 160) nav.classList.add("is-hidden");
@@ -69,6 +70,7 @@ function onScroll(){
   lastY = y; ticking = false;
 }
 addEventListener("scroll", () => { if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive:true });
+onScroll();
 // Se o foco do teclado entrar na nav, ela aparece
 nav.addEventListener("focusin", () => nav.classList.remove("is-hidden"));
 
@@ -81,7 +83,7 @@ function setSheet(open){
   sheet.setAttribute("aria-hidden", String(!open));
   sheet.inert = !open;
   toggle.setAttribute("aria-expanded", String(open));
-  $(".label", toggle).textContent = open ? "Fechar" : "Menu";
+  toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
   document.body.style.overflow = open ? "hidden" : "";
   if (open) { lastFocus = document.activeElement; setTimeout(() => $(".sheet nav a")?.focus({preventScroll:true}), 300); }
   else if (lastFocus) { lastFocus.focus({preventScroll:true}); lastFocus = null; }
