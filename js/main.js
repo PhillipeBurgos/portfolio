@@ -105,7 +105,7 @@ const showToast = () => {
 mail?.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(EMAIL);
-    mail.classList.add("is-copied"); showToast();
+    mail.classList.add("is-copied"); showToast(); track("Copiar e-mail");
     clearTimeout(mailTimer);
     mailTimer = setTimeout(() => mail.classList.remove("is-copied"), 2200);
   } catch { location.href = "mailto:" + EMAIL; }
@@ -115,3 +115,15 @@ $$(".js-cv").forEach(a => a.addEventListener("click", () => {
   setTimeout(() => a.classList.remove("is-pulled"), 950);
 }));
 $(".to-top")?.addEventListener("click", () => scrollTo({ top:0, behavior: reduce ? "auto" : "smooth" }));
+
+/* Analytics (Umami): registra os cliques que importam */
+const track = name => { try { window.umami?.track(name); } catch(e) {} };
+document.addEventListener("click", e => {
+  const a = e.target.closest("a, button");
+  if (!a) return;
+  const proj = a.matches('a[href*="projetos/"], .pn-item') && $(".p-title, .pn-title", a);
+  if (proj) track("Projeto: " + proj.textContent.trim());
+  else if (a.classList.contains("js-cv")) track("Baixar currículo");
+  else if (/linkedin\.com\/in\/phillipeburgos/.test(a.href || "")) track("LinkedIn");
+  else if ((a.href || "").startsWith("mailto:")) track("Abrir e-mail");
+}, true);
