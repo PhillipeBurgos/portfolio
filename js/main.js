@@ -95,16 +95,29 @@ addEventListener("keydown", e => { if (e.key === "Escape" && sheet.classList.con
 addEventListener("resize", () => { if (innerWidth > 860 && sheet.classList.contains("is-open")) setSheet(false); });
 
 /* E-mail, download e topo */
-const toast = $(".toast"), mail = $(".mail"), mailLabel = $(".mail-label");
-let mailTimer;
+const toast = $(".toast"), mail = $(".mail");
+let mailTimer, toastTimer;
+const showToast = () => {
+  toast.classList.add("is-on");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("is-on"), 2200);
+};
 mail?.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(EMAIL);
-    mail.classList.add("is-copied"); mailLabel.textContent = "E-mail copiado"; toast.classList.add("is-on");
+    mail.classList.add("is-copied"); showToast();
     clearTimeout(mailTimer);
-    mailTimer = setTimeout(() => { mail.classList.remove("is-copied"); mailLabel.textContent = "Copiar e-mail"; toast.classList.remove("is-on"); }, 2200);
+    mailTimer = setTimeout(() => mail.classList.remove("is-copied"), 2200);
   } catch { location.href = "mailto:" + EMAIL; }
 });
+// No desktop, o e-mail do currículo copia em vez de abrir o app de e-mail
+const desktop = matchMedia("(hover:hover) and (pointer:fine)");
+$$(".js-copy-mail").forEach(a => a.addEventListener("click", async e => {
+  if (!desktop.matches) return;
+  e.preventDefault();
+  try { await navigator.clipboard.writeText(EMAIL); showToast(); }
+  catch { location.href = a.href; }
+}));
 $$(".js-cv").forEach(a => a.addEventListener("click", () => {
   a.classList.remove("is-pulled"); void a.offsetWidth; a.classList.add("is-pulled");
   setTimeout(() => a.classList.remove("is-pulled"), 950);
