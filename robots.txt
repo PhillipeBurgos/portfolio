@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://phillipeburgos.com.br/sitemap.xml
+Sitemap: https://www.phillipeburgos.com.br/sitemap.xml
