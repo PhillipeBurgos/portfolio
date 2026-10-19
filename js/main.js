@@ -110,14 +110,6 @@ mail?.addEventListener("click", async () => {
     mailTimer = setTimeout(() => mail.classList.remove("is-copied"), 2200);
   } catch { location.href = "mailto:" + EMAIL; }
 });
-// No desktop, o e-mail do currículo copia em vez de abrir o app de e-mail
-const desktop = matchMedia("(hover:hover) and (pointer:fine)");
-$$(".js-copy-mail").forEach(a => a.addEventListener("click", async e => {
-  if (!desktop.matches) return;
-  e.preventDefault();
-  try { await navigator.clipboard.writeText(EMAIL); showToast(); }
-  catch { location.href = a.href; }
-}));
 $$(".js-cv").forEach(a => a.addEventListener("click", () => {
   a.classList.remove("is-pulled"); void a.offsetWidth; a.classList.add("is-pulled");
   setTimeout(() => a.classList.remove("is-pulled"), 950);
