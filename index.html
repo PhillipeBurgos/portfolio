@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 <script>(function(){var d=document.documentElement,s=0,t=setTimeout(function(){s=Date.now();d.classList.add("is-slow")},500);addEventListener("load",function(){clearTimeout(t);if(!s)return;setTimeout(function(){d.classList.add("is-ready");setTimeout(function(){d.classList.remove("is-slow","is-ready")},900)},Math.max(0,1200-(Date.now()-s)))})})()</script>
 <script>try{if(sessionStorage.getItem("pt")){document.documentElement.classList.add("pt-in");sessionStorage.removeItem("pt")}}catch(e){}</script>
-<link rel="stylesheet" href="css/style.css?v=28">
+<link rel="stylesheet" href="css/style.css?v=30">
 </head>
 <body>
 <div class="loader" aria-hidden="true"><span class="loader-word"><span style="--i:0">b</span><span style="--i:1">u</span><span style="--i:2">r</span><span style="--i:3">g</span><span style="--i:4">o</span><span style="--i:5">s</span></span></div>
@@ -72,9 +72,41 @@
   <section class="section" id="portfolio">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="sec-title">Portfólio<sup>(04)</sup></h2>
+        <h2 class="sec-title">Portfólio<sup hidden>(04)</sup></h2>
       </div>
-      <ul class="projects" id="projects">
+      <div class="wip">
+        <div class="wip-art" aria-hidden="true">
+          <svg class="wip-layer" viewBox="0 0 500 500" fill="none" stroke="#141414" stroke-opacity=".38" stroke-width="2.5">
+            <rect width="500" height="500" fill="#E7E3DA" stroke="none"/>
+            <path d="M0 36h500"/><circle cx="20" cy="18" r="5"/><circle cx="38" cy="18" r="5"/><circle cx="56" cy="18" r="5"/>
+            <rect x="30" y="56" width="90" height="14" rx="7"/><rect x="330" y="58" width="40" height="10" rx="5"/><rect x="380" y="58" width="40" height="10" rx="5"/><rect x="430" y="58" width="40" height="10" rx="5"/>
+            <rect x="30" y="92" width="440" height="170" rx="12" stroke-dasharray="9 7"/><path d="M30 92l440 170M470 92 30 262"/>
+            <rect x="30" y="284" width="300" height="22" rx="6"/><rect x="30" y="316" width="220" height="22" rx="6"/>
+            <rect x="30" y="354" width="400" height="9" rx="4.5"/><rect x="30" y="372" width="340" height="9" rx="4.5"/>
+            <rect x="30" y="396" width="120" height="34" rx="17"/><rect x="162" y="396" width="100" height="34" rx="17" stroke-dasharray="6 5"/>
+            <g stroke-dasharray="9 7"><rect x="30" y="448" width="136" height="80" rx="12"/><rect x="182" y="448" width="136" height="80" rx="12"/><rect x="334" y="448" width="136" height="80" rx="12"/></g>
+            <path d="M44 462h28v28H44zM196 462h28v28h-28zM348 462h28v28h-28zM82 468h70M82 482h50M234 468h70M234 482h50M386 468h70M386 482h50"/>
+          </svg>
+          <div class="wip-hifi">
+            <svg class="wip-layer" viewBox="0 0 500 500">
+              <rect width="500" height="500" fill="#F2EFE9"/>
+              <rect width="500" height="36" fill="#141414"/><circle cx="20" cy="18" r="5" fill="#E2231A"/><circle cx="38" cy="18" r="5" fill="#6F6B64"/><circle cx="56" cy="18" r="5" fill="#6F6B64"/>
+              <rect x="30" y="56" width="90" height="14" rx="7" fill="#141414"/><rect x="330" y="58" width="40" height="10" rx="5" fill="#6F6B64" opacity=".5"/><rect x="380" y="58" width="40" height="10" rx="5" fill="#6F6B64" opacity=".5"/><rect x="430" y="58" width="40" height="10" rx="5" fill="#E2231A"/>
+              <rect x="30" y="92" width="440" height="170" rx="12" fill="#E2231A"/><circle cx="400" cy="142" r="24" fill="#F2EFE9" opacity=".9"/><path d="M30 238l85-70 60 48 58-42 237 96v2a12 12 0 0 1-12 12H42a12 12 0 0 1-12-12z" fill="#141414" opacity=".3"/>
+              <rect x="30" y="284" width="300" height="22" rx="6" fill="#141414"/><rect x="30" y="316" width="220" height="22" rx="6" fill="#141414"/>
+              <rect x="30" y="354" width="400" height="9" rx="4.5" fill="#6F6B64" opacity=".45"/><rect x="30" y="372" width="340" height="9" rx="4.5" fill="#6F6B64" opacity=".45"/>
+              <rect x="30" y="396" width="120" height="34" rx="17" fill="#141414"/><rect x="163.25" y="397.25" width="97.5" height="31.5" rx="15.75" fill="none" stroke="#141414" stroke-width="2.5"/>
+              <g fill="#E7E3DA"><rect x="30" y="448" width="136" height="80" rx="12"/><rect x="182" y="448" width="136" height="80" rx="12"/><rect x="334" y="448" width="136" height="80" rx="12"/></g>
+              <rect x="44" y="462" width="28" height="28" rx="8" fill="#E2231A"/><rect x="196" y="462" width="28" height="28" rx="14" fill="#141414"/><rect x="348" y="462" width="28" height="28" rx="8" fill="#6F6B64"/>
+              <g fill="#3B3935"><rect x="82" y="465" width="70" height="6" rx="3"/><rect x="234" y="465" width="70" height="6" rx="3"/><rect x="386" y="465" width="70" height="6" rx="3"/></g>
+              <g fill="#6F6B64" opacity=".45"><rect x="82" y="479" width="50" height="6" rx="3"/><rect x="234" y="479" width="50" height="6" rx="3"/><rect x="386" y="479" width="50" height="6" rx="3"/></g>
+            </svg>
+          </div>
+          <span class="wip-scan"></span>
+        </div>
+        <p class="wip-text">Portfólio em desenvolvimento</p>
+      </div>
+      <ul class="projects" id="projects" hidden>
         <li class="project">
           <a href="projetos/design-system-pluriconnect.html">
             <span class="p-thumb" aria-hidden="true"><img src="assets/img/projetos/design-system-pluriconnect/capa.jpg" alt="" loading="lazy" decoding="async"></span>
