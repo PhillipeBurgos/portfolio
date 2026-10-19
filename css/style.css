@@ -136,6 +136,16 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 .pt-out .curtain{transform:translateY(-100%);transition:transform .8s var(--ease)}
 .pt-leave .curtain{transform:none;transition:transform .5s var(--ease)}
 
+/* Tela de carregamento, só aparece se a página demorar mais de 0,5s */
+.loader{position:fixed;inset:0;z-index:600;background:var(--ink);color:var(--on-dark);display:grid;place-items:center;visibility:hidden;pointer-events:none}
+.is-slow .loader{visibility:visible;pointer-events:auto}
+.is-ready .loader{transform:translateY(-100%);transition:transform .8s var(--ease)}
+.loader-word{display:flex;overflow:hidden;padding-bottom:.12em;font-family:var(--display);font-weight:700;font-size:clamp(3.5rem,14vw,9rem);letter-spacing:-.05em;line-height:1}
+.loader-word span{display:inline-block;font-variation-settings:"opsz" 96,"wght" 700}
+.is-slow .loader-word span{animation:loader-in .9s var(--ease) both,loader-wave 1.6s ease-in-out infinite;animation-delay:calc(var(--i)*70ms),calc(.9s + var(--i)*110ms)}
+@keyframes loader-in{from{transform:translateY(110%)}}
+@keyframes loader-wave{50%{font-variation-settings:"opsz" 96,"wght" 250}}
+
 @media (max-width:860px){
   .menu{display:none}
   .menu-toggle{display:inline-flex}
