@@ -116,10 +116,9 @@ $$(".js-cv").forEach(a => a.addEventListener("click", () => {
 }));
 $(".to-top")?.addEventListener("click", () => scrollTo({ top:0, behavior: reduce ? "auto" : "smooth" }));
 
-/* Analytics (Umami e Clarity): registra os cliques que importam */
+/* Analytics (Umami): registra os cliques que importam */
 const track = name => {
   try { window.umami?.track(name); } catch(e) {}
-  try { window.clarity?.("event", name); } catch(e) {}
 };
 document.addEventListener("click", e => {
   const a = e.target.closest("a, button");
