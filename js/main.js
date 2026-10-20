@@ -116,8 +116,11 @@ $$(".js-cv").forEach(a => a.addEventListener("click", () => {
 }));
 $(".to-top")?.addEventListener("click", () => scrollTo({ top:0, behavior: reduce ? "auto" : "smooth" }));
 
-/* Analytics (Umami): registra os cliques que importam */
-const track = name => { try { window.umami?.track(name); } catch(e) {} };
+/* Analytics (Umami e Clarity): registra os cliques que importam */
+const track = name => {
+  try { window.umami?.track(name); } catch(e) {}
+  try { window.clarity?.("event", name); } catch(e) {}
+};
 document.addEventListener("click", e => {
   const a = e.target.closest("a, button");
   if (!a) return;
@@ -127,3 +130,26 @@ document.addEventListener("click", e => {
   else if (/linkedin\.com\/in\/phillipeburgos/.test(a.href || "")) track("LinkedIn");
   else if ((a.href || "").startsWith("mailto:")) track("Abrir e-mail");
 }, true);
+
+/* Aviso de cookies: o Clarity só carrega depois que a pessoa aceita */
+const CONSENT_KEY = "consent-clarity";
+function loadClarity(){
+  if (window.clarity?.loaded) return;
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z0nwawrusk");
+  window.clarity.loaded = true;
+}
+const consent = $(".consent");
+let choice = null;
+try { choice = localStorage.getItem(CONSENT_KEY); } catch(e) {}
+if (choice === "granted") loadClarity();
+else if (!choice && consent) {
+  consent.hidden = false;
+  requestAnimationFrame(() => requestAnimationFrame(() => consent.classList.add("is-on")));
+}
+$$("[data-consent]").forEach(b => b.addEventListener("click", () => {
+  const value = b.dataset.consent;
+  try { localStorage.setItem(CONSENT_KEY, value); } catch(e) {}
+  if (value === "granted") loadClarity();
+  consent.classList.remove("is-on");
+  setTimeout(() => { consent.hidden = true; }, 600);
+}));

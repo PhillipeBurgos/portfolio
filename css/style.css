@@ -124,6 +124,16 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 .toast i{width:18px;height:18px;border-radius:50%;background:var(--red);display:grid;place-items:center}
 .toast i svg{width:10px;height:10px}
 
+/* Aviso de cookies */
+.consent{position:fixed;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:140;width:min(360px,calc(100vw - 32px));background:var(--ink);color:var(--on-dark-2);border-radius:var(--radius);padding:18px 18px 16px;font-size:14px;line-height:1.5;box-shadow:0 18px 40px -16px rgba(0,0,0,.45);transform:translateY(calc(100% + 32px));transition:transform .6s var(--ease)}
+.consent.is-on{transform:none}
+.consent p{margin-bottom:14px}
+.consent-actions{display:flex;gap:8px}
+.consent-btn{font-family:var(--display);font-weight:600;font-size:14px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(242,239,233,.3);color:var(--on-dark);text-align:center;transition:background .3s,border-color .3s,color .3s}
+.consent-btn:hover,.consent-btn:focus-visible{border-color:var(--on-dark)}
+.consent-btn.is-primary{background:var(--on-dark);border-color:var(--on-dark);color:var(--ink)}
+.consent-btn.is-primary:hover,.consent-btn.is-primary:focus-visible{background:var(--red);border-color:var(--red);color:#fff}
+
 .cursor{position:fixed;left:0;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--red);pointer-events:none;z-index:300;display:none;transition:width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease),background .3s,border-color .3s,opacity .25s;border:1px solid transparent}
 .has-cursor .cursor{display:block}
 .has-cursor,.has-cursor *{cursor:none!important}
