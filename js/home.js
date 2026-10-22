@@ -44,3 +44,50 @@ $$(".job-head").forEach(btn => btn.addEventListener("click", () => {
   job.classList.toggle("is-open", open);
   btn.setAttribute("aria-expanded", String(open));
 }));
+
+/* Portfólio em desenvolvimento: arrastar a linha entre wireframe e alta fidelidade */
+const wip = document.querySelector(".wip-art");
+if (wip) {
+  const handle = wip.querySelector(".wip-scan");
+  const setPos = p => {
+    p = Math.max(0, Math.min(100, p));
+    wip.style.setProperty("--pos", p + "%");
+    handle.setAttribute("aria-valuenow", Math.round(p));
+    handle.setAttribute("aria-valuetext", Math.round(p) + "%");
+  };
+  const fromEvent = e => {
+    const r = wip.getBoundingClientRect();
+    setPos((e.clientX - r.left) / r.width * 100);
+  };
+  wip.addEventListener("pointerdown", e => {
+    wip.classList.remove("is-intro");
+    wip.classList.add("is-dragging");
+    wip.setPointerCapture(e.pointerId);
+    fromEvent(e);
+  });
+  wip.addEventListener("pointermove", e => { if (wip.classList.contains("is-dragging")) fromEvent(e); });
+  const stop = () => wip.classList.remove("is-dragging");
+  wip.addEventListener("pointerup", stop);
+  wip.addEventListener("pointercancel", stop);
+  handle.addEventListener("keydown", e => {
+    const now = parseFloat(handle.getAttribute("aria-valuenow"));
+    const step = e.shiftKey ? 20 : 5;
+    const next = { ArrowLeft: now - step, ArrowDown: now - step, ArrowRight: now + step, ArrowUp: now + step, Home: 0, End: 100 }[e.key];
+    if (next === undefined) return;
+    e.preventDefault();
+    setPos(next);
+  });
+
+  // Ao aparecer na tela, a linha dá uma balançada para mostrar que dá para arrastar
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      wip.classList.add("is-intro");
+      const steps = [72, 28, 50];
+      steps.forEach((p, i) => setTimeout(() => { if (wip.classList.contains("is-intro")) setPos(p); }, 300 + i * 1100));
+      setTimeout(() => wip.classList.remove("is-intro"), 300 + steps.length * 1100);
+    }, { threshold: .6 });
+    io.observe(wip);
+  }
+}

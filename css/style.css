@@ -215,17 +215,20 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 .p-bg img{width:100%;height:100%;transform:scale(1.12);transition:transform 1.1s var(--ease)}
 .p-bg::after{content:"";position:absolute;inset:0;background:rgba(20,20,20,.78)}
 
-/* Portfólio em desenvolvimento: wireframe que vira tela de alta fidelidade */
+/* Portfólio em desenvolvimento: arraste a linha para comparar wireframe e alta fidelidade */
 .wip{display:flex;flex-direction:column;align-items:center;text-align:center}
 .wip-text{font-family:var(--display);font-weight:500;font-size:clamp(1.15rem,2vw,1.6rem);letter-spacing:-.02em;color:var(--ink-2);margin-top:24px}
-.wip-art{position:relative;width:min(300px,100%);aspect-ratio:1;border-radius:var(--radius);overflow:hidden;background:var(--bg-2)}
+.wip-cta{margin-top:20px}
+.wip-art{position:relative;width:min(300px,100%);aspect-ratio:1;border-radius:var(--radius);overflow:hidden;background:var(--bg-2);cursor:ew-resize;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .wip-art::after{content:"";position:absolute;inset:0;border:1px solid var(--line);border-radius:inherit;pointer-events:none}
-.wip-layer{position:absolute;inset:0;width:100%;height:100%;display:block}
-.wip-hifi{position:absolute;inset:0;clip-path:inset(0 100% 0 0);animation:wip-wipe 8s var(--ease) infinite}
-.wip-scan{position:absolute;top:0;bottom:0;left:0;width:2px;margin-left:-1px;background:var(--red);box-shadow:0 0 18px 2px rgba(226,35,26,.45);animation:wip-scan 8s var(--ease) infinite}
-@keyframes wip-wipe{0%,12%{clip-path:inset(0 100% 0 0)}45%,72%{clip-path:inset(0 0 0 0)}100%{clip-path:inset(0 100% 0 0)}}
-@keyframes wip-scan{0%,12%{left:0;opacity:0}14%{opacity:1}43%{opacity:1}45%,72%{left:100%;opacity:0}74%{opacity:1}98%{opacity:1}100%{left:0;opacity:0}}
-@media (prefers-reduced-motion:reduce){.wip-hifi{clip-path:none}.wip-scan{display:none}}
+.wip-layer{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+.wip-hifi{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0);pointer-events:none}
+.wip-scan{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:var(--red);box-shadow:0 0 18px 2px rgba(226,35,26,.45);outline:none}
+.wip-handle{position:absolute;top:50%;left:50%;width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;transform:translate(-50%,-50%);box-shadow:0 6px 18px -6px rgba(0,0,0,.4);transition:transform .3s var(--ease)}
+.wip-handle svg{width:18px;height:18px}
+.wip-art:hover .wip-handle,.wip-art.is-dragging .wip-handle{transform:translate(-50%,-50%) scale(1.1)}
+.wip-scan:focus-visible .wip-handle{outline:2px solid var(--ink);outline-offset:3px}
+.wip-art.is-intro .wip-hifi,.wip-art.is-intro .wip-scan{transition:clip-path 1.1s var(--ease),left 1.1s var(--ease)}
 .p-year,.p-title,.p-desc,.p-client,.p-main .tag,.p-meta .tag{transition:background .5s var(--ease),color .5s var(--ease),border-color .5s var(--ease),transform .7s var(--ease)}
 @media (hover:hover){
   .project>a:hover .p-bg,.project>a:focus-visible .p-bg{clip-path:inset(0 0 0 0 round var(--radius))}
