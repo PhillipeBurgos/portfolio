@@ -245,8 +245,8 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 .principle{padding:40px 48px 52px 0;border-bottom:1px solid rgba(242,239,233,.14)}
 .principle:nth-child(2n){padding-left:48px;padding-right:0;border-left:1px solid rgba(242,239,233,.14)}
 .principle h3{font-family:var(--display);font-weight:600;font-size:clamp(1.35rem,2.2vw,1.9rem);letter-spacing:-.025em;line-height:1.15;display:flex;align-items:center;gap:16px;margin-bottom:14px}
-.principle h3::before{content:"";width:10px;height:10px;background:var(--red);flex:none;transition:transform .6s var(--ease),border-radius .6s var(--ease)}
-.principle:hover h3::before{transform:rotate(135deg);border-radius:2px}
+.principle-ico{width:30px;height:30px;color:var(--red);flex:none;transition:transform .6s var(--ease)}
+@media (hover:hover){.principle:hover .principle-ico{transform:rotate(-8deg) scale(1.12)}}
 .principle p{color:var(--on-dark-2);max-width:46ch}
 
 .cv{display:grid;grid-template-columns:minmax(280px,1fr) 1.9fr;gap:clamp(40px,6vw,96px)}
