@@ -386,12 +386,13 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 .case-section>h2{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,2.4vw,2.1rem);letter-spacing:-.03em;line-height:1.1;position:sticky;top:100px;align-self:start}
 .case-section .body p{font-size:clamp(17px,1.35vw,20px);line-height:1.65;color:var(--ink-2);max-width:62ch}
 .case-section .body p+p{margin-top:1em}
-.steps+p{margin-top:clamp(32px,4vw,48px)}
+.steps+p,.stats+p{margin-top:clamp(32px,4vw,48px)}
 .case-figure{margin-top:clamp(32px,4vw,48px);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
 .case-figure img{display:block;width:100%;height:auto}
 .case-section .body .big{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,2.8vw,2.6rem);letter-spacing:-.03em;line-height:1.15;color:var(--ink);max-width:24ch}
 
 .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;counter-reset:step}
+.steps.one{grid-template-columns:1fr}
 .steps li{padding:26px 0 30px;border-top:1px solid var(--ink);counter-increment:step}
 .steps li::before{content:counter(step,decimal-leading-zero);display:block;font-size:14px;color:var(--red);font-weight:600;margin-bottom:14px;font-variant-numeric:tabular-nums}
 .steps h3{font-family:var(--display);font-weight:600;font-size:clamp(1.25rem,1.8vw,1.55rem);letter-spacing:-.02em;margin-bottom:10px}
@@ -469,3 +470,12 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 .gallery figure.wide{grid-column:1/-1}
 .gallery.gallery-fit figure .frame{aspect-ratio:auto}
 .gallery-fit img{display:block;height:auto}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.stats li{padding:26px 0 30px;border-top:1px solid var(--ink)}
+.stat-num{display:block;font-family:var(--display);font-weight:600;font-size:clamp(2rem,3.6vw,3.2rem);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums;margin-bottom:18px}
+.stat-num i{font-style:normal;font-weight:400;color:var(--red)}
+.stats h3{font-family:var(--display);font-weight:600;font-size:clamp(1.1rem,1.5vw,1.3rem);letter-spacing:-.02em;margin-bottom:8px}
+.stats p{color:var(--ink-2);font-size:16px!important;line-height:1.6!important}
+@media (max-width:620px){
+  .stats{grid-template-columns:1fr}
+}

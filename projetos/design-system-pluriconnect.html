@@ -18,7 +18,7 @@
 <script>(function(){var d=document.documentElement,s=0,t=setTimeout(function(){s=Date.now();d.classList.add("is-slow")},500);addEventListener("load",function(){clearTimeout(t);if(!s)return;setTimeout(function(){d.classList.add("is-ready");setTimeout(function(){d.classList.remove("is-slow","is-ready")},900)},Math.max(0,1200-(Date.now()-s)))})})()</script>
 <script>try{if(sessionStorage.getItem("pt")){document.documentElement.classList.add("pt-in");sessionStorage.removeItem("pt")}}catch(e){}</script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="17da07a0-1ce1-4844-8b0f-482c8715d6e3"></script>
-<link rel="stylesheet" href="../css/style.css?v=36">
+<link rel="stylesheet" href="../css/style.css?v=37">
 </head>
 <body>
 <div class="loader" aria-hidden="true"><span class="loader-word"><span style="--i:0">b</span><span style="--i:1">u</span><span style="--i:2">r</span><span style="--i:3">g</span><span style="--i:4">o</span><span style="--i:5">s</span></span></div>
@@ -98,13 +98,12 @@
 
     <section class="case-section">
       <h2>Resultados</h2>
-      <!-- Se tiver números (conversão, tempo, NPS, adoção), coloque aqui. Número dá muita credibilidade. -->
-      <div class="body"><ul class="results"><li>Cores white label aplicadas em 23 componentes, antes eram só 2 (sidenav e topbar)</li><li>Uma fonte única de verdade entre design e front-end</li><li>Handoff com menos ida e volta entre design e desenvolvimento</li><li>Base pronta para gerar telas com IA respeitando o sistema oficial</li></ul></div>
+      <div class="body"><ul class="stats"><li><b class="stat-num">58% <i>→</i> 0%</b><h3>Componentes com nome genérico</h3><p>Antes, mais da metade se chamava “Frame 244” ou “Component 12”. Hoje todo componente tem nome que design e código entendem igual.</p></li><li><b class="stat-num">8% <i>→</i> 100%</b><h3>Componentes documentados</h3><p>Cada um tem descrição de uso, e 97% têm propriedades configuráveis em vez de cópias soltas.</p></li><li><b class="stat-num">0 <i>→</i> 214</b><h3>Tokens em 7 coleções</h3><p>Cor, tipografia, espaçamento, padding, raio, borda e grid viraram variáveis, prontas para receber a marca de cada rede.</p></li><li><b class="stat-num">2 <i>→</i> 23</b><h3>Componentes com cores white label</h3><p>Antes, só a sidenav e a topbar mudavam com a marca de cada rede.</p></li><li><b class="stat-num">2.135 <i>→</i> 145</b><h3>Ícones</h3><p>Saímos de uma biblioteca inteira importada sem critério para um conjunto curado do que o produto usa de verdade.</p></li><li><b class="stat-num">8 produtos</b><h3>Um único sistema</h3><p>A mesma base atende Maratona ENEM, Redação, Censo, Comunicação e outros módulos, cada um com sua navegação.</p></li></ul><p>O DS virou a fonte única de verdade entre design e front-end Angular. Com nomes, tokens e regras iguais nos dois lados, o handoff passou a ter menos ida e volta, e a IA consegue gerar telas usando os componentes oficiais em vez de inventar variações.</p></div>
     </section>
 
     <section class="case-section" style="border-bottom:0">
       <h2>Aprendizados</h2>
-      <div class="body"><p>Design System não é só biblioteca, é acordo entre pessoas. O que fez o sistema pegar foi documentar o porquê de cada decisão e envolver o time de front-end desde o começo.</p></div>
+      <div class="body"><ol class="steps one"><li><h3>Nome também é design</h3><p>Mais da metade dos componentes antigos tinha nome genérico, e isso custava caro: ninguém achava nada, e cada dev traduzia do seu jeito. Padronizar a nomenclatura parece detalhe, mas foi o que fez design e código começarem a falar a mesma língua.</p></li><li><h3>Menos é mais fácil de manter</h3><p>Cortar de 2 mil ícones para 145 e de 142 componentes para 92 não foi perda, foi foco. Um sistema enxuto é um sistema que o time consegue governar.</p></li><li><h3>Preparar para IA é preparar para pessoas</h3><p>Quando começamos a usar IA para gerar código a partir do Figma, ela tropeçava exatamente onde um dev novo tropeçaria: nomes inconsistentes, estados faltando, regra sem documentação. Deixar o sistema legível para a máquina o tornou melhor para todo mundo.</p></li></ol></div>
     </section>
   </div>
 
