@@ -386,6 +386,9 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 .case-section>h2{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,2.4vw,2.1rem);letter-spacing:-.03em;line-height:1.1;position:sticky;top:100px;align-self:start}
 .case-section .body p{font-size:clamp(17px,1.35vw,20px);line-height:1.65;color:var(--ink-2);max-width:62ch}
 .case-section .body p+p{margin-top:1em}
+.steps+p{margin-top:clamp(32px,4vw,48px)}
+.case-figure{margin-top:clamp(32px,4vw,48px);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.case-figure img{display:block;width:100%;height:auto}
 .case-section .body .big{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,2.8vw,2.6rem);letter-spacing:-.03em;line-height:1.15;color:var(--ink);max-width:24ch}
 
 .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;counter-reset:step}
@@ -463,3 +466,6 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 @media (prefers-reduced-motion:reduce){
   .case-title .w>span{transform:none}
 }
+.gallery figure.wide{grid-column:1/-1}
+.gallery.gallery-fit figure .frame{aspect-ratio:auto}
+.gallery-fit img{display:block;height:auto}
