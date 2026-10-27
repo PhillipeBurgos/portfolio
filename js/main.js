@@ -45,7 +45,7 @@ if (finePointer) {
   root.classList.add("has-cursor");
   document.addEventListener("mouseleave", () => cursor.classList.add("is-hidden"));
   document.addEventListener("mouseenter", () => cursor.classList.remove("is-hidden"));
-  document.addEventListener("mouseover", e => cursor.classList.toggle("is-link", !!e.target.closest("a, button")));
+  document.addEventListener("mouseover", e => cursor.classList.toggle("is-link", !!e.target.closest("a, button, .zoomable")));
   let cx = 0, cy = 0;
   const loop = () => {
     cx += (mx - cx) * .35; cy += (my - cy) * .35;

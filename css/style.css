@@ -479,3 +479,7 @@ a:hover .roll>span,a:focus-visible .roll>span{transform:translateY(-50%)}
 @media (max-width:620px){
   .stats{grid-template-columns:1fr}
 }
+.zoomable{cursor:zoom-in}
+.zoomable:focus-visible{outline-offset:-4px}
+.pswp.pswp{--pswp-bg:#141414}
+body:has(.pswp--open) .cursor{z-index:100001}
