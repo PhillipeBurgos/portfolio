@@ -10,7 +10,7 @@ Site portfólio do Phillipe Burgos, Product Designer.
 phillipeburgos-site/
 ├── index.html                      Home (hero, portfólio, como eu trabalho, currículo, contato)
 ├── projetos/
-│   ├── design-system-pluriconnect.html
+│   ├── design-system-libro.html
 │   ├── gestao-escolar-pluriconnect.html
 │   ├── maratona-enem.html
 │   └── ecommerce-nagem.html
